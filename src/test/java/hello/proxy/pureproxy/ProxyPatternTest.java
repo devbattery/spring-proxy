@@ -7,7 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class ProxyPatternTest {
-    
+
     @DisplayName("no Proxy Test")
     @Test
     void noProxyTest() {
@@ -21,7 +21,7 @@ public class ProxyPatternTest {
         client.execute();
         client.execute();
     }
-    
+
     @DisplayName("cache Proxy Test")
     @Test
     void cacheProxyTest() {
@@ -36,5 +36,5 @@ public class ProxyPatternTest {
         client.execute();
         client.execute();
     }
-    
+
 }

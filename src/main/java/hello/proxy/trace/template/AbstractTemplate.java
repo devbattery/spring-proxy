@@ -28,4 +28,5 @@ public abstract class AbstractTemplate<T> {
     }
 
     protected abstract T call();
+
 }
