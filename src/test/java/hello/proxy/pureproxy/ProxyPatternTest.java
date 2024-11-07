@@ -1,5 +1,6 @@
 package hello.proxy.pureproxy;
 
+import hello.proxy.pureproxy.code.CacheProxy;
 import hello.proxy.pureproxy.code.ProxyPatternClient;
 import hello.proxy.pureproxy.code.RealSubject;
 import org.junit.jupiter.api.DisplayName;
@@ -15,11 +16,25 @@ public class ProxyPatternTest {
         ProxyPatternClient client = new ProxyPatternClient(realSubject);
 
         // when
-        client.execute();
-        client.execute();
-        client.execute();
-
         // then
+        client.execute();
+        client.execute();
+        client.execute();
+    }
+    
+    @DisplayName("cache Proxy Test")
+    @Test
+    void cacheProxyTest() {
+        // given
+        RealSubject realSubject = new RealSubject();
+        CacheProxy cacheProxy = new CacheProxy(realSubject);
+        ProxyPatternClient client = new ProxyPatternClient(cacheProxy);
+
+        // when
+        // then
+        client.execute();
+        client.execute();
+        client.execute();
     }
     
 }
